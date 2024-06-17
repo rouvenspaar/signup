@@ -8,11 +8,9 @@
   }
 
   .gradient {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.12) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.12) 100%);
   }
 
   .newsletter-form {
@@ -86,11 +84,13 @@
   .newsletter-form button:not(.active) {
     background: var(--primary);
   }
+
   .newsletter-form button .plane,
   .newsletter-form button .trails {
     pointer-events: none;
     position: absolute;
   }
+
   .newsletter-form button .plane {
     left: 0;
     top: 0;
@@ -98,6 +98,7 @@
     bottom: 0;
     transform: translate(var(--x), var(--y)) rotate(var(--rotate)) translateZ(0);
   }
+
   .newsletter-form button .plane .left,
   .newsletter-form button .plane .right {
     position: absolute;
@@ -108,6 +109,7 @@
     opacity: var(--plane-opacity);
     transform: translate(var(--plane-x), var(--plane-y)) translateZ(0);
   }
+
   .newsletter-form button .plane .left:before,
   .newsletter-form button .plane .left:after,
   .newsletter-form button .plane .right:before,
@@ -122,23 +124,14 @@
     transform: translate(var(--part-x, 0.25%), var(--part-y, 0)) translateZ(0);
     z-index: var(--z-index, 2);
     background: var(--b, var(--left-wing-background));
-    -webkit-clip-path: polygon(
-      var(--first-x, var(--left-wing-first-x))
-        var(--first-y, var(--left-wing-first-y)),
-      var(--second-x, var(--left-wing-second-x))
-        var(--second-y, var(--left-wing-second-y)),
-      var(--third-x, var(--left-wing-third-x))
-        var(--third-y, var(--left-wing-third-y))
-    );
-    clip-path: polygon(
-      var(--first-x, var(--left-wing-first-x))
-        var(--first-y, var(--left-wing-first-y)),
-      var(--second-x, var(--left-wing-second-x))
-        var(--second-y, var(--left-wing-second-y)),
-      var(--third-x, var(--left-wing-third-x))
-        var(--third-y, var(--left-wing-third-y))
-    );
+    -webkit-clip-path: polygon(var(--first-x, var(--left-wing-first-x)) var(--first-y, var(--left-wing-first-y)),
+        var(--second-x, var(--left-wing-second-x)) var(--second-y, var(--left-wing-second-y)),
+        var(--third-x, var(--left-wing-third-x)) var(--third-y, var(--left-wing-third-y)));
+    clip-path: polygon(var(--first-x, var(--left-wing-first-x)) var(--first-y, var(--left-wing-first-y)),
+        var(--second-x, var(--left-wing-second-x)) var(--second-y, var(--left-wing-second-y)),
+        var(--third-x, var(--left-wing-third-x)) var(--third-y, var(--left-wing-third-y)));
   }
+
   .newsletter-form button .plane .left:after {
     --part-x: 0;
     --z-index: 1;
@@ -150,6 +143,7 @@
     --third-x: var(--left-body-third-x);
     --third-y: var(--left-body-third-y);
   }
+
   .newsletter-form button .plane .right:before {
     --part-x: -0.25%;
     --z-index: 2;
@@ -161,6 +155,7 @@
     --third-x: var(--right-wing-third-x);
     --third-y: var(--right-wing-third-y);
   }
+
   .newsletter-form button .plane .right:after {
     --part-x: 0;
     --z-index: 1;
@@ -172,6 +167,7 @@
     --third-x: var(--right-body-third-x);
     --third-y: var(--right-body-third-y);
   }
+
   .newsletter-form button .trails {
     display: block;
     width: 33px;
@@ -186,12 +182,14 @@
     stroke-dashoffset: var(--trails-stroke);
     transform: rotate(68deg) translateZ(0);
   }
+
   .newsletter-form button span {
     display: block;
     position: relative;
     z-index: 4;
     opacity: var(--text-opacity);
   }
+
   .newsletter-form button span.success {
     z-index: 0;
     position: absolute;
@@ -202,6 +200,7 @@
     opacity: var(--success-opacity);
     color: var(--success);
   }
+
   .newsletter-form button span.success svg {
     display: inline-block;
     vertical-align: top;
@@ -215,5 +214,28 @@
     stroke-dasharray: 14px;
     stroke: var(--success);
     stroke-dashoffset: var(--success-stroke);
+  }
+
+  :root {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
   }
 }
