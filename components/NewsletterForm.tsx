@@ -57,7 +57,7 @@ function NewsletterForm() {
   };
 
   return (
-    <div className="flex flex-col space-y-8 md:w-[400px]">
+    <div className="flex flex-col space-y-4 md:w-[400px]">
       <form
         onSubmit={handleSubmit}
         className="newsletter-form mt-10 animate-fade-in-3"
@@ -99,7 +99,7 @@ function NewsletterForm() {
         </div>
       </form>
 
-      <div className="relative">
+      <div className="relative z-10">
         {(successMessage || errorMessage) && (
           <div className="flex items-start space-x-2 bg-[#0A0E12] shadow-outline-gray text-white rounded-[9px] py-4 px-6 animate-fade-bottom absolute">
             <div className="h-6 w-6 bg-[#1B2926] flex items-center justify-center rounded-full border border-[#273130] flex-shrink-0">

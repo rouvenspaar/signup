@@ -3,15 +3,15 @@ import { Metadata } from "next";
 export const socials = [
   {
     id: 1,
-    name: "Twitter",
-    url: "https://twitter.com/YenneferIlw",
-    handle: "@YenneferIlw",
+    name: "Astrobin",
+    url: "https://www.astrobin.com/users/Rouvi05/",
+    handle: "Rouven",
   },
   {
     id: 2,
-    name: "Instagram",
-    url: "https://www.instagram.com/ilwyennefer",
-    handle: "ilwyennefer",
+    name: "ClodyNights",
+    url: "https://www.cloudynights.com/ilwyennefer",
+    handle: "Rouven",
   },
 ];
 
