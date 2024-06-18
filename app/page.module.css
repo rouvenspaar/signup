@@ -5,7 +5,7 @@
     background-image: url('/images/background.png');
     background-size: cover;
     background-position: center;
-    filter: blur(7.5rem) brightness(0.25);
+    filter: blur(7.5rem) brightness(0.3);
 }
 
 .accordion {
