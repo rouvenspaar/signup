@@ -43,17 +43,17 @@ export default function Home() {
         <AccordionItem value="3">
           <AccordionTrigger>Do I have to purchase AstroLog?</AccordionTrigger>
           <AccordionContent>
-            Since developing AstroLog took and still takes a lot of time and effort it won't be free but there will be a 30-day trial.
+            Since developing AstroLog took and still takes a lot of time and effort it won&apos;t be free but there will be a 30-day trial.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="4">
           <AccordionTrigger>Who develops AstroLog?</AccordionTrigger>
           <AccordionContent>
-            Hi, my name is Rouven Spaar, and I am the sole developer of AstroLog. I am 19 years old and studying mechanical engineering.<br />
+            Hi, my name is Rouven Spaar, and I am the solo developer of AstroLog. I am 19 years old and studying mechanical engineering.<br />
             <br />
             I have had an interest in astronomy since I was a little child. After getting my first telescope, I quickly transitioned into
             astrophotography. The most frustrating part for me was always classifying the raw files after a night of shooting. So, I searched
-            for solutions and didn't find anything. I then quickly programmed a rudimentary solution for myself but soon realized that I
+            for solutions and didn&apos;t find anything. I then quickly programmed a rudimentary solution for myself but soon realized that I
             wanted to make this solution public. That is when I started to develop a completely new, better-looking version of my proof of
             concept: AstroLog.
           </AccordionContent>
