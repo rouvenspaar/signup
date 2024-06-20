@@ -5,23 +5,43 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_API_SERVER, // e.g. us1
 });
 
+export const runtime = 'edge';
+
 export async function POST(request: Request) {
-  const { email } = await request.json();
-
-  if (!email) new Response(JSON.stringify({ error: "Email is required" }));
-
   try {
+    const { email } = await request.json();
+
+    if (!email) {
+      return new Response(
+        JSON.stringify({ error: "Email is required" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     const res = await mailchimp.lists.addListMember(
       process.env.MAILCHIMP_AUDIENCE_ID!,
       { email_address: email, status: "subscribed" }
     );
 
-    return new Response(JSON.stringify({ res }));
-  } catch (error: any) {
     return new Response(
-      JSON.stringify({ error: JSON.parse(error.response.text) })
+      JSON.stringify({ message: 'Subscription added successfully', res }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
+  } catch (error: any) {
+    let errorMessage = 'Internal Server Error';
+
+    if (error.response && error.response.text) {
+      try {
+        const parsedError = JSON.parse(error.response.text);
+        errorMessage = parsedError.detail || parsedError.title || errorMessage;
+      } catch (e) {
+        // If parsing fails, keep the generic error message
+      }
+    }
+
+    return new Response(
+      JSON.stringify({ error: errorMessage }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
 }
-
-export const runtime = 'edge';
