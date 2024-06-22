@@ -1,5 +1,4 @@
 import NewsletterForm from "@/components/NewsletterForm";
-import Socials from "@/components/Socials";
 import styles from './page.module.css';
 import {
   Accordion,
@@ -7,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { DownloadLink } from "@/components/DownloadLink";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <NewsletterForm />
       <div className="flex animate-fade-in-3 text-sm text-gray-500">
         <h1>Download the preview version&nbsp;</h1>
-        <a href="" className="text-[#c02d39] underline hover:text-[#a0232d]">here</a>
+        <DownloadLink />
         <h1>.</h1>
       </div>
       <Accordion type="single" collapsible className={`${styles.accordion} animate-fade-in-3`}>
@@ -49,7 +49,7 @@ export default function Home() {
         <AccordionItem value="4">
           <AccordionTrigger>Who develops AstroLog?</AccordionTrigger>
           <AccordionContent>
-            Hi, my name is Rouven Spaar, and I am the solo developer of AstroLog. I am 19 years old and studying mechanical engineering.<br />
+            Hi, my name is Rouven Spaar, and I am the developer of AstroLog. I am 19 years old and studying mechanical engineering.<br />
             <br />
             I have had an interest in astronomy since I was a little child. After getting my first telescope, I quickly transitioned into
             astrophotography. The most frustrating part for me was always classifying the raw files after a night of shooting. So, I searched
